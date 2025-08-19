@@ -4,24 +4,31 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyfealite"
-version = "0.1.0"
-description = "Python Finite Element Analysis Library for 2D Structures"
+version = "1.0.0"
+description = "Professional Python Finite Element Analysis Library for 2D Structures with Advanced Visualization"
 authors = [
-    {name = "PyFEALiTE Team", email = "info@pyfealite.org"}
+    {name = "PyFEALiTE Team", email = "buildsmart888@gmail.com"}
 ]
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
+homepage = "https://github.com/buildsmart888/PyFEALiTE"
+repository = "https://github.com/buildsmart888/PyFEALiTE"
+documentation = "https://buildsmart888.github.io/PyFEALiTE"
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Operating System :: OS Independent",
 ]
 keywords = [
     "finite-element",
@@ -29,7 +36,10 @@ keywords = [
     "engineering",
     "fem",
     "2d-frame",
-    "beam-analysis"
+    "beam-analysis",
+    "visualization",
+    "professional",
+    "civil-engineering"
 ]
 
 dependencies = [
