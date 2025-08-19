@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: pyfealite
+Version: 0.1.0
+Summary: Python Finite Element Analysis Library for 2D Structures
+Author-email: PyFEALiTE Team <info@pyfealite.org>
+License: MIT
+Project-URL: Homepage, https://github.com/pyfealite/pyfealite
+Project-URL: Documentation, https://pyfealite.readthedocs.io
+Project-URL: Repository, https://github.com/pyfealite/pyfealite
+Project-URL: Issues, https://github.com/pyfealite/pyfealite/issues
+Keywords: finite-element,structural-analysis,engineering,fem,2d-frame,beam-analysis
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: pandas>=1.3.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.12.0; extra == "dev"
+Requires-Dist: black>=21.0.0; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
+Requires-Dist: flake8>=3.9.0; extra == "dev"
+Requires-Dist: pre-commit>=2.15.0; extra == "dev"
+Provides-Extra: visualization
+Requires-Dist: streamlit>=1.0.0; extra == "visualization"
+Requires-Dist: plotly>=5.0.0; extra == "visualization"
+Requires-Dist: ezdxf>=0.16.0; extra == "visualization"
+Provides-Extra: notebook
+Requires-Dist: jupyter>=1.0.0; extra == "notebook"
+Requires-Dist: ipywidgets>=7.6.0; extra == "notebook"

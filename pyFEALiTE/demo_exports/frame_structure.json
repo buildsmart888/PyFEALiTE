@@ -1,0 +1,506 @@
+{
+  "structure": {
+    "name": "Demo 2D Frame",
+    "analysis_status": "success",
+    "n_nodes": 9,
+    "n_elements": 10,
+    "n_dofs": 27,
+    "n_free_dofs": 22
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "A",
+      "x": 0.0,
+      "y": 0.0,
+      "restraints": {
+        "UX": true,
+        "UY": true,
+        "RZ": false
+      },
+      "coord_numbers": [
+        22,
+        23,
+        0
+      ],
+      "is_free": true,
+      "dof_count": 1
+    },
+    {
+      "id": 1,
+      "label": "B",
+      "x": 6.0,
+      "y": 0.0,
+      "restraints": {
+        "UX": true,
+        "UY": true,
+        "RZ": false
+      },
+      "coord_numbers": [
+        24,
+        25,
+        1
+      ],
+      "is_free": true,
+      "dof_count": 1
+    },
+    {
+      "id": 2,
+      "label": "C",
+      "x": 12.0,
+      "y": 0.0,
+      "restraints": {
+        "UX": false,
+        "UY": true,
+        "RZ": false
+      },
+      "coord_numbers": [
+        2,
+        26,
+        3
+      ],
+      "is_free": true,
+      "dof_count": 2
+    },
+    {
+      "id": 3,
+      "label": "D",
+      "x": 0.0,
+      "y": 4.0,
+      "restraints": {
+        "UX": false,
+        "UY": false,
+        "RZ": false
+      },
+      "coord_numbers": [
+        4,
+        5,
+        6
+      ],
+      "is_free": true,
+      "dof_count": 3
+    },
+    {
+      "id": 4,
+      "label": "E",
+      "x": 6.0,
+      "y": 4.0,
+      "restraints": {
+        "UX": false,
+        "UY": false,
+        "RZ": false
+      },
+      "coord_numbers": [
+        7,
+        8,
+        9
+      ],
+      "is_free": true,
+      "dof_count": 3
+    },
+    {
+      "id": 5,
+      "label": "F",
+      "x": 12.0,
+      "y": 4.0,
+      "restraints": {
+        "UX": false,
+        "UY": false,
+        "RZ": false
+      },
+      "coord_numbers": [
+        10,
+        11,
+        12
+      ],
+      "is_free": true,
+      "dof_count": 3
+    },
+    {
+      "id": 6,
+      "label": "G",
+      "x": 0.0,
+      "y": 8.0,
+      "restraints": {
+        "UX": false,
+        "UY": false,
+        "RZ": false
+      },
+      "coord_numbers": [
+        13,
+        14,
+        15
+      ],
+      "is_free": true,
+      "dof_count": 3
+    },
+    {
+      "id": 7,
+      "label": "H",
+      "x": 6.0,
+      "y": 8.0,
+      "restraints": {
+        "UX": false,
+        "UY": false,
+        "RZ": false
+      },
+      "coord_numbers": [
+        16,
+        17,
+        18
+      ],
+      "is_free": true,
+      "dof_count": 3
+    },
+    {
+      "id": 8,
+      "label": "I",
+      "x": 12.0,
+      "y": 8.0,
+      "restraints": {
+        "UX": false,
+        "UY": false,
+        "RZ": false
+      },
+      "coord_numbers": [
+        19,
+        20,
+        21
+      ],
+      "is_free": true,
+      "dof_count": 3
+    }
+  ],
+  "elements": [
+    {
+      "id": 0,
+      "label": "Col1_L1",
+      "start_node": 0,
+      "end_node": 3,
+      "cross_section_id": 0,
+      "length": 4.0,
+      "angle": 1.5707963267948966
+    },
+    {
+      "id": 1,
+      "label": "Col2_L1",
+      "start_node": 1,
+      "end_node": 4,
+      "cross_section_id": 0,
+      "length": 4.0,
+      "angle": 1.5707963267948966
+    },
+    {
+      "id": 2,
+      "label": "Col3_L1",
+      "start_node": 2,
+      "end_node": 5,
+      "cross_section_id": 0,
+      "length": 4.0,
+      "angle": 1.5707963267948966
+    },
+    {
+      "id": 3,
+      "label": "Col1_L2",
+      "start_node": 3,
+      "end_node": 6,
+      "cross_section_id": 0,
+      "length": 4.0,
+      "angle": 1.5707963267948966
+    },
+    {
+      "id": 4,
+      "label": "Col2_L2",
+      "start_node": 4,
+      "end_node": 7,
+      "cross_section_id": 0,
+      "length": 4.0,
+      "angle": 1.5707963267948966
+    },
+    {
+      "id": 5,
+      "label": "Col3_L2",
+      "start_node": 5,
+      "end_node": 8,
+      "cross_section_id": 0,
+      "length": 4.0,
+      "angle": 1.5707963267948966
+    },
+    {
+      "id": 6,
+      "label": "Beam1_L1",
+      "start_node": 3,
+      "end_node": 4,
+      "cross_section_id": 1,
+      "length": 6.0,
+      "angle": 0.0
+    },
+    {
+      "id": 7,
+      "label": "Beam2_L1",
+      "start_node": 4,
+      "end_node": 5,
+      "cross_section_id": 1,
+      "length": 6.0,
+      "angle": 0.0
+    },
+    {
+      "id": 8,
+      "label": "Beam1_L2",
+      "start_node": 6,
+      "end_node": 7,
+      "cross_section_id": 1,
+      "length": 6.0,
+      "angle": 0.0
+    },
+    {
+      "id": 9,
+      "label": "Beam2_L2",
+      "start_node": 7,
+      "end_node": 8,
+      "cross_section_id": 1,
+      "length": 6.0,
+      "angle": 0.0
+    }
+  ],
+  "materials": [
+    {
+      "id": 0,
+      "label": "S355",
+      "type": "IsotropicMaterial",
+      "E": 200000000000.0,
+      "G": 76923076923.07692,
+      "nu": 0.3,
+      "density": 7850.0
+    }
+  ],
+  "cross_sections": [
+    {
+      "id": 0,
+      "label": "Column_400x400",
+      "type": "RectangularSection",
+      "material_id": 0,
+      "A": 0.16000000000000003,
+      "Iz": 0.002133333333333334,
+      "width": 0.4,
+      "height": 0.4
+    },
+    {
+      "id": 1,
+      "label": "Beam_300x600",
+      "type": "RectangularSection",
+      "material_id": 0,
+      "A": 0.18,
+      "Iz": 0.0053999999999999986,
+      "width": 0.3,
+      "height": 0.6
+    }
+  ],
+  "load_cases": [
+    {
+      "id": 0,
+      "name": "Dead Load",
+      "load_type": "dead",
+      "factor": 1.0,
+      "description": ""
+    },
+    {
+      "id": 1,
+      "name": "Live Load",
+      "load_type": "live",
+      "factor": 1.0,
+      "description": ""
+    },
+    {
+      "id": 2,
+      "name": "Wind Load",
+      "load_type": "wind",
+      "factor": 1.0,
+      "description": ""
+    }
+  ],
+  "results": {
+    "Dead Load": {
+      "displacements": [
+        {
+          "node_id": 0,
+          "UX": 0.0,
+          "UY": 0.0,
+          "RZ": 1.6416710378409747e-08
+        },
+        {
+          "node_id": 1,
+          "UX": 0.0,
+          "UY": 0.0,
+          "RZ": 3.9453450869783406e-08
+        },
+        {
+          "node_id": 2,
+          "UX": -3.609161440016432e-07,
+          "UY": 0.0,
+          "RZ": -6.117668856252223e-08
+        },
+        {
+          "node_id": 3,
+          "UX": -1.1040354843626799e-07,
+          "UY": 1.658188358193162e-08,
+          "RZ": 4.996924057038149e-08
+        },
+        {
+          "node_id": 4,
+          "UX": -1.1307709655650454e-07,
+          "UY": 4.183623283613673e-08,
+          "RZ": 5.900920677811602e-09
+        },
+        {
+          "node_id": 5,
+          "UX": -1.162093897515543e-07,
+          "UY": 1.6581883581931634e-08,
+          "RZ": -6.117668856252223e-08
+        },
+        {
+          "node_id": 6,
+          "UX": -1.1319208998622938e-07,
+          "UY": 2.4856438172541056e-08,
+          "RZ": 6.286726144412715e-08
+        },
+        {
+          "node_id": 7,
+          "UX": -1.102202971531753e-07,
+          "UY": 6.280049750559621e-08,
+          "RZ": -1.3105568046391303e-09
+        },
+        {
+          "node_id": 8,
+          "UX": -1.0708800395812555e-07,
+          "UY": 2.4843064321862716e-08,
+          "RZ": -6.084499914855736e-08
+        }
+      ],
+      "reactions": []
+    },
+    "Live Load": {
+      "displacements": [
+        {
+          "node_id": 0,
+          "UX": 0.0,
+          "UY": 0.0,
+          "RZ": 9.62165994683809e-09
+        },
+        {
+          "node_id": 1,
+          "UX": 0.0,
+          "UY": 0.0,
+          "RZ": 2.312401230794276e-08
+        },
+        {
+          "node_id": 2,
+          "UX": -2.1153610576612812e-07,
+          "UY": 0.0,
+          "RZ": -3.58558742833431e-08
+        },
+        {
+          "node_id": 3,
+          "UX": -6.470721463415239e-08,
+          "UY": 9.894064136266481e-09,
+          "RZ": 2.9287091081938105e-08
+        },
+        {
+          "node_id": 4,
+          "UX": -6.627547438497102e-08,
+          "UY": 1.8961871727467017e-08,
+          "RZ": 3.4585811728427475e-09
+        },
+        {
+          "node_id": 5,
+          "UX": -6.811260863275573e-08,
+          "UY": 9.894064136266486e-09,
+          "RZ": -3.58558742833431e-08
+        },
+        {
+          "node_id": 6,
+          "UX": -6.634414287445207e-08,
+          "UY": 1.4831897341331532e-08,
+          "RZ": 3.689625740561073e-08
+        },
+        {
+          "node_id": 7,
+          "UX": -6.460107929132142e-08,
+          "UY": 3.1594043848083224e-08,
+          "RZ": -7.681287951402894e-10
+        },
+        {
+          "node_id": 8,
+          "UX": -6.276394504353672e-08,
+          "UY": 1.4824058810585227e-08,
+          "RZ": -3.571099180319272e-08
+        }
+      ],
+      "reactions": []
+    },
+    "Wind Load": {
+      "displacements": [
+        {
+          "node_id": 0,
+          "UX": 0.0,
+          "UY": 0.0,
+          "RZ": -3.725805365790267e-07
+        },
+        {
+          "node_id": 1,
+          "UX": 0.0,
+          "UY": 0.0,
+          "RZ": -3.934921814847664e-07
+        },
+        {
+          "node_id": 2,
+          "UX": 7.89530970295727e-07,
+          "UY": 0.0,
+          "RZ": -9.997606980699781e-08
+        },
+        {
+          "node_id": 3,
+          "UX": 1.1114687460657314e-06,
+          "UY": 4.127809399500122e-09,
+          "RZ": -8.844048639124517e-08
+        },
+        {
+          "node_id": 4,
+          "UX": 1.1128221261894363e-06,
+          "UY": -8.056187990002087e-10,
+          "RZ": -4.7632231672544494e-08
+        },
+        {
+          "node_id": 5,
+          "UX": 1.1144352495237183e-06,
+          "UY": -3.322190600499915e-09,
+          "RZ": -4.372606980699782e-08
+        },
+        {
+          "node_id": 6,
+          "UX": 1.516637919086502e-06,
+          "UY": 5.230983354053731e-09,
+          "RZ": -3.6432504695482726e-08
+        },
+        {
+          "node_id": 7,
+          "UX": 1.5157768949644662e-06,
+          "UY": -6.232896478323572e-10,
+          "RZ": -1.454887317419534e-08
+        },
+        {
+          "node_id": 8,
+          "UX": 1.5156971049635178e-06,
+          "UY": -4.6076937062213765e-09,
+          "RZ": -4.3912732877332664e-08
+        }
+      ],
+      "reactions": []
+    }
+  },
+  "export_info": {
+    "exporter": "PyFEALiTE",
+    "version": "0.1.0",
+    "format": "json"
+  }
+}

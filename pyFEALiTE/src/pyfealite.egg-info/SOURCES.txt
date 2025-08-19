@@ -1,0 +1,12 @@
+pyproject.toml
+src/pyfealite/__init__.py
+src/pyfealite.egg-info/PKG-INFO
+src/pyfealite.egg-info/SOURCES.txt
+src/pyfealite.egg-info/dependency_links.txt
+src/pyfealite.egg-info/requires.txt
+src/pyfealite.egg-info/top_level.txt
+src/pyfealite/core/__init__.py
+src/pyfealite/core/node.py
+src/pyfealite/materials/__init__.py
+src/pyfealite/materials/base.py
+src/pyfealite/materials/isotropic.py

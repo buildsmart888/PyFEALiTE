@@ -1,0 +1,29 @@
+# PyFEALiTE - Complete Finite Element Analysis Library
+# Requirements for all functionality
+
+# Core Dependencies (Required)
+numpy>=1.21.0          # Numerical computations and array operations
+scipy>=1.7.0           # Sparse matrix operations and solvers
+matplotlib>=3.5.0      # Plotting and visualization system
+
+# Optional Dependencies (Recommended for full functionality)
+plotly>=5.0.0          # Interactive visualization and web plots
+ezdxf>=0.16.0          # DXF export for CAD interoperability
+psutil>=5.8.0          # Performance benchmarking and monitoring
+
+# Development Dependencies
+pytest>=6.0.0          # Testing framework
+pytest-cov>=2.12.0     # Test coverage reporting
+black>=21.0.0          # Code formatting
+mypy>=0.910            # Static type checking
+flake8>=3.9.0          # Code linting
+
+# Documentation and Examples (Optional)
+jupyter>=1.0.0         # Jupyter notebook support for examples
+ipywidgets>=7.6.0      # Interactive widgets for notebooks
+pandas>=1.3.0          # Data manipulation for advanced analysis
+
+# Note: Install with different dependency sets:
+# pip install -e .                    # Core functionality only
+# pip install -e .[all]               # All optional dependencies
+# pip install -r requirements.txt     # Development environment
