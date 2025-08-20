@@ -49,3 +49,7 @@ class Material(ABC):
     def __str__(self) -> str:
         """String representation."""
         return f"{self.__class__.__name__}('{self.label}', E={self.E})"
+
+
+# Alias for backward compatibility
+IMaterial = Material

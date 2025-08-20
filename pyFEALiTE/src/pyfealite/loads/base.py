@@ -133,3 +133,7 @@ class Load(ABC):
     
     def __str__(self) -> str:
         return f"{self.__class__.__name__}('{self.label}', {self.direction.value})"
+
+
+# Alias for backward compatibility
+ILoad = Load

@@ -55,3 +55,7 @@ class CrossSection(ABC):
     def __str__(self) -> str:
         """String representation."""
         return f"{self.__class__.__name__}('{self.label}', A={self.A:.2e})"
+
+
+# Alias for backward compatibility
+CrossSectionBase = CrossSection
