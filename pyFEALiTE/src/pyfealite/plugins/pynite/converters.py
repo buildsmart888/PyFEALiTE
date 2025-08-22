@@ -56,6 +56,7 @@ def element_releases_to_pynite(element: Any) -> Dict:
     If the element does not expose releases, returns all False.
     """
     releases = getattr(element, "end_release", None) or {}
+    # Typical representation might be a tuple/list (ri, rj) or dict; be defensive.
     ri = None
     rj = None
     if isinstance(releases, dict):
@@ -112,6 +113,7 @@ def dist_load_to_nodal_equivalents(element: Any, w: float, direction: str = "ver
     """
     L = getattr(element, "length", None)
     if L is None:
+        # Try compute from nodes
         start = getattr(element, "start_node", None)
         end = getattr(element, "end_node", None)
         if start is not None and end is not None:
@@ -122,36 +124,18 @@ def dist_load_to_nodal_equivalents(element: Any, w: float, direction: str = "ver
             L = 1.0
 
     if direction.lower().startswith("v"):
+        # For a uniformly distributed vertical load w over length L, equivalent
+        # nodal vertical forces: wL/2 at each node; equivalent end moments +/- wL^2/12
         Fy_i = w * L / 2.0
         Fy_j = w * L / 2.0
         Mz_i = -w * L * L / 12.0
         Mz_j = w * L * L / 12.0
         return {"node_i_load": (0.0, Fy_i, Mz_i), "node_j_load": (0.0, Fy_j, Mz_j)}
     else:
+        # axial
         Fx_i = w * L / 2.0
         Fx_j = w * L / 2.0
         return {"node_i_load": (Fx_i, 0.0, 0.0), "node_j_load": (Fx_j, 0.0, 0.0)}
-
-
-def spring_to_pynite(spring: Any) -> Dict:
-    """Convert a PyFEALiTE spring support to a PyNite-like representation.
-
-    Expected spring object has attributes: node (label or Node), k_axial, k_shear,
-    k_rot (rotational). Returns a dict with node label and stiffness components.
-    """
-    node = getattr(spring, "node", None)
-    node_label = getattr(node, "label", None) if node is not None else node
-    return {
-        "node": node_label,
-        "k_axial": float(getattr(spring, "k_axial", getattr(spring, "kx", 0.0))),
-        "k_shear": float(getattr(spring, "k_shear", getattr(spring, "ky", 0.0))),
-        "k_rot": float(getattr(spring, "k_rot", getattr(spring, "kr", 0.0))),
-    }
-
-
-# Note: full converters (element releases, distributed loads, springs, etc.)
-# will be implemented in follow-up commits. Unit tests will be provided to
-# validate mappings and unit consistency.
 
 
 def element_pointload_to_nodal_equivalents(point_load: Any, element: Any) -> Dict:
@@ -161,14 +145,17 @@ def element_pointload_to_nodal_equivalents(point_load: Any, element: Any) -> Dic
     Otherwise, fall back to a simple distribution by distance.
     Returns dict with node_i_load and node_j_load tuples (Fx,Fy,Mz).
     """
+    # Prefer API method if present
     try:
         if hasattr(point_load, "get_equivalent_nodal_forces"):
             forces = point_load.get_equivalent_nodal_forces(element)
+            # forces expected as numpy array [Fx1, Fy1, Mz1, Fx2, Fy2, Mz2]
             if hasattr(forces, "__len__") and len(forces) >= 6:
                 return {"node_i_load": (float(forces[0]), float(forces[1]), float(forces[2])), "node_j_load": (float(forces[3]), float(forces[4]), float(forces[5]))}
     except Exception:
         pass
 
+    # Fallback: distribute by proximity (distance attribute)
     L = getattr(element, "length", None)
     if L is None:
         start = getattr(element, "start_node", None)
@@ -193,7 +180,29 @@ def element_pointload_to_nodal_equivalents(point_load: Any, element: Any) -> Dic
     Mz_i = -Fy * a * b * b / (L * L) if L and a > 0 and b > 0 else 0.0
     Mz_j = Fy * a * a * b / (L * L) if L and a > 0 and b > 0 else 0.0
 
+    # add applied moment distribution
     Mz_i += -Mz * b / L if L else 0.0
     Mz_j += -Mz * a / L if L else 0.0
 
     return {"node_i_load": (Fx_i, Fy_i, Mz_i), "node_j_load": (Fx_j, Fy_j, Mz_j)}
+
+
+def spring_to_pynite(spring: Any) -> Dict:
+    """Convert a PyFEALiTE spring support to a PyNite-like representation.
+
+    Expected spring object has attributes: node (label or Node), k_axial, k_shear,
+    k_rot (rotational). Returns a dict with node label and stiffness components.
+    """
+    node = getattr(spring, "node", None)
+    node_label = getattr(node, "label", None) if node is not None else node
+    return {
+        "node": node_label,
+        "k_axial": float(getattr(spring, "k_axial", getattr(spring, "kx", 0.0))),
+        "k_shear": float(getattr(spring, "k_shear", getattr(spring, "ky", 0.0))),
+        "k_rot": float(getattr(spring, "k_rot", getattr(spring, "kr", 0.0))),
+    }
+
+
+# Note: full converters (element releases, distributed loads, springs, etc.)
+# will be implemented in follow-up commits. Unit tests will be provided to
+# validate mappings and unit consistency.
