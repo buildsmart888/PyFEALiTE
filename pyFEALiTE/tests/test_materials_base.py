@@ -62,7 +62,7 @@ class TestMaterialType:
         assert len(MaterialType) == 5
 
 
-class TestMaterial:
+class TestMaterialBase:
     """Test Material base class."""
     
     def test_material_creation_valid(self):
@@ -329,7 +329,7 @@ if __name__ == "__main__":
     
     # Test Material
     print("\n🏗️  Testing Material base class...")
-    test_material = TestMaterial()
+    test_material = TestMaterialBase()
     try:
         test_material.test_material_creation_valid()
         test_material.test_material_creation_minimal()
